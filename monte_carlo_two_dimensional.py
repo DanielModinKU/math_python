@@ -3,9 +3,13 @@
 
 import numpy as np
 import seaborn as sb 
+import plotext.plot as plt
 
 def f(x,y): #test function 
     return x**2+y**2
+
+def f2(x,y):
+    return 5 #test function two - will create a plane z=5, so it is easy to calculate true volume by hand
 
 def g(x,y): #funktion der beskriver domæne i  xy-plan (returnerer 1 hvis punkt (x,y) i domæne, -1 hvis ikke)
     #domæne eksempel her: x^2 + y^2 = 4 (cirkel i xy centrum med radius 2)
@@ -44,7 +48,8 @@ def mc(func,g,x0,x1,y0,y1,n):
     
     return V 
     
-u = mc(f,g,0,3,0,3,1000)
+u = mc(f2,g,-3,3,-3,3,10000) #make sure the box can contain the entire domain g! 
 print(u)
 #sb.scatterplot(x=u[0],y=u[1])
+    
     
