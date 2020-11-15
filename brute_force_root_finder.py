@@ -2,8 +2,8 @@
 
 import numpy as np
 
-def f(x): 
-    return np.sin(x)
+def f(x): #implement equation we wish to solve here (if for example x² = 9, then x²-9=0, and then solve f(x) = x² -9 where f(x)=0)
+    return x**2-9
 
 def brf(func,a,b,n):
     #create the points 
@@ -19,7 +19,6 @@ def brf(func,a,b,n):
             return root 
         
   
-            
-    
-#brute force root finder 
-brf(f,0,5,1000)    
+             
+x=brf(f,0,1000,100000)    
+print(x)
